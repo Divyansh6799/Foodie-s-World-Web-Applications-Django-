@@ -29,4 +29,4 @@
 
 Demo Pic----
 
-{https://github.com/Divyansh6799/Foodie-s-World-Web-Applications-Django-/blob/master/Screenshot%20(11).png}
+https://github.com/Divyansh6799/Foodie-s-World-Web-Applications-Django-/blob/master/Screenshot%20(11).png
