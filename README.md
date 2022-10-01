@@ -25,3 +25,6 @@
     >pip install pillow 
     Html, css and bootstrap has been used to design the frontend.
     I have made this site online by uploading it on pythonanywhere web hosting server.
+
+
+Demo Pics----
