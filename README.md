@@ -27,4 +27,6 @@
     I have made this site online by uploading it on pythonanywhere web hosting server.
 
 
-Demo Pics----
+Demo Pic----
+
+{https://github.com/Divyansh6799/Foodie-s-World-Web-Applications-Django-/blob/master/Screenshot%20(11).png}
