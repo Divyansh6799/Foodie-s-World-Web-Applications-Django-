@@ -1,0 +1,93 @@
+{%extends 'foodrecipe/base.html'%}
+{% load static %}
+{%block activity_contact%}
+class = 'active'
+{%endblock%}
+{%block title%}
+    <title>Contact-Details</title>
+{%endblock%}
+{%block stl%}
+<style type="text/css">
+.sccs{
+    font-size: 25px;
+    color: rgb(248, 245, 248);
+    background-color: rgb(99, 14, 133);
+    padding-left: 5px;
+}
+.bx{
+    border: 3px solid rgb(99, 14, 133);
+    border-radius: 3px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+.od{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+.pad-l{
+    padding-left: 20px;
+}
+.ttl{
+    color: rgb(168, 51, 31);
+}
+.sr>.fa {
+  padding-top: 4px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.sr>.fa:hover {
+  opacity: 0.7;
+}
+.sr>.fa-github {
+  background: #007bb5;
+  color: white;
+  width:10%;
+  vertical-align:top;
+}
+.sr>.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  width:10%;
+}
+.sr>.fa-instagram {
+  background: #125688;
+  color: white;
+  width:10%;
+}
+.lnk{
+    margin-left: 20px;
+}
+</style>
+{%endblock%}
+{%block home%}
+<script>
+    gtag('event', 'screen_view', { 'screen_name': 'Contact'});
+</script>
+<div class="row">
+    <div class="col-md-8 col-md-push-2 bx">
+        <div class = 'row'>
+            <div class="col">
+                <p class="sccs">Contact Details :</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col sr">
+                <p class='od'></p>
+                <p class="pad-l">Name : Divyansh Trivedi</p>
+                <p class="pad-l">Email : divyanshtrivedi.dt@gmail.com</p>
+                <p class="pad-l">Contact no : +91 9695176119</p>
+                <p class="pad-l">Address : Kanpur,UP,India</p>
+                <span class="lnk">Follow me On :</span>
+                <a href="https://github.com/Divyansh6799" class="fa fa-github" style='font-size:25px'></a>
+                <a href="https://www.linkedin.com/in/divyansh-trivedi-1551581bb/" class="fa fa-linkedin" style='font-size:19px'></a>
+                <a href="https://www.instagram.com/divyansh__1997/" class="fa fa-instagram" style='font-size:19px'></a>
+            </div>
+        </div>
+    </div> 
+</div>
+{%endblock%}

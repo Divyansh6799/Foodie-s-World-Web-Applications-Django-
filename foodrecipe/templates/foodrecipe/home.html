@@ -1,0 +1,146 @@
+{% extends 'foodrecipe/base.html' %}
+{% load static %}
+{%block activity_home%}
+class = 'active'
+{%endblock%}
+{%block title%}
+    <title>Foodie's World for foodlovers</title>
+    <link rel="icon" href="https://i.pinimg.com/originals/12/e9/05/12e90596e3deadb59dee5de7b3f633a8.jpg">
+{%endblock%}
+{%block script%}
+<!-- <script src="riveted.min.js"></script> -->
+<script>riveted.init();</script>
+<script>
+    if (window.performance) {
+    var timeSincePageLoad = Math.round(performance.now());
+    gtag('event', 'timing_complete', {
+        'name': 'load',
+        'value': timeSincePageLoad,
+        'event_category': 'JS Dependencies'
+    });
+    }
+    var form = document.getElementById('signup-form');
+    // Add a listener for the "submit" event.
+    function recordSubmitTime(value) {
+        if (window.performance) {
+        const timeAtSubmit = Math.round(performance.now());
+        const time = timeAtSubmit - timeSincePageLoad ;
+        gtag('event', 'time_spent', {
+            'screen': 'Home',
+            'value': time,
+            'event_category': value
+        });
+        }
+    }    
+</script>
+{%endblock%}
+{%block stl%}
+<style type="text/css">
+    .block{
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-top: 20px;
+        margin: 0px;
+        height: 500px;
+      
+    }
+    .outer{
+        background-color: whitesmoke;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+        border-radius: 25px;
+        margin: 0px;
+        height: 460px;
+    }
+    .outer:hover{
+        background-color: whitesmoke;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+        border-radius: 25px;
+        margin: 0px;
+        height: 460px;
+        box-shadow: 0 4px 8px 0 rgb(231, 145, 145), 0 4px 8px 0 rgb(20, 20, 20);
+    }
+    .rimg{
+        padding:0px;
+        margin: 0px;
+        height: 200px;
+        text-align: center;
+    }
+    .name{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 18px;
+        border-bottom: rgb(95, 39, 128) 1px solid;
+    }
+    .name_link{
+        color: black;
+    }
+    .name_link:hover{
+        color: black;
+    }
+    .ing{
+        
+        height: 85px;
+        overflow: hidden;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        border-bottom: rgb(95, 39, 128) 1px solid;
+    }
+    .ing2{
+       
+        height: 80px;
+        overflow: hidden;
+    }
+    .food_image{
+        height: 200px;
+        max-width: 290px;
+    }
+    .cont{
+        padding: 0px;
+    }
+    
+</style>
+{%endblock%}
+
+{%block home%}
+<script>
+    gtag('event', 'screen_view', { 'screen_name': 'Home'});
+</script>
+<div class="row ">
+    {%for food in detail%}
+    <div class="col-md-4 block">
+        <div class="row">
+            <div class="col-md-12 outer">
+                <div class="row  rimg">
+                    <div class="col-md-12 cont">
+                        {%if food.image%}
+                        <a href="{%url 'food_detail' pk=food.pk%}" onclick="recordSubmitTime('redirectToFoodDetail')"><img class="food_image" src="{{food.image.url}}" alt="{{food.name}}"></a>
+                        {%endif%}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col name">
+                        <a href="{%url 'food_detail' pk=food.pk%}" onclick="recordSubmitTime('redirectToFoodDetail')" class="name_link">{{food.name}}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col ing">
+                        <span class="des">Description : {{food.description}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col ing2">
+                        <span>Ingredients : {{food.ingredients}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
