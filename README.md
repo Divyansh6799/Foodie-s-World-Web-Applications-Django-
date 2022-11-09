@@ -15,8 +15,6 @@
    * now run 
    >python manage.py runserver
    * run http://127.0.0.1:8000/ on your browser 
-  <br><br><br><br>
-  
   
   **Details about the web-app** :<br> 
     this web app has been made using Django Framework. Sqlite3 Relational DBMS has been used which is a default DBMS for django.
